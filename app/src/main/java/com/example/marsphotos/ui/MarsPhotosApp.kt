@@ -33,6 +33,7 @@ import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.marsphotos.R
+import com.example.marsphotos.ui.screens.AiViewModel
 import com.example.marsphotos.ui.screens.HomeScreen
 import com.example.marsphotos.ui.screens.MarsViewModel
 
@@ -47,7 +48,10 @@ fun MarsPhotosApp() {
             modifier = Modifier.fillMaxSize()
         ) {
             val marsViewModel: MarsViewModel = viewModel()
+            val aiViewModel: AiViewModel = viewModel()
             HomeScreen(
+                gptQuery = aiViewModel.gptQuery,
+                gptResponse = aiViewModel.gptResponse,
                 marsUiState = marsViewModel.marsUiState,
                 contentPadding = it,
             )
