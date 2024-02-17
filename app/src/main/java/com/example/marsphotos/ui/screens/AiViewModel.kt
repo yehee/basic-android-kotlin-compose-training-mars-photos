@@ -24,7 +24,7 @@ class AiViewModel: ViewModel() {
 
     private fun getGptResponse() {
         viewModelScope.launch {
-            val openAI = OpenAI("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")
+            val openAI = OpenAI("ADD_YOUR_API_KEY")
 
             try {
                 val chatCompletionRequest = ChatCompletionRequest(
